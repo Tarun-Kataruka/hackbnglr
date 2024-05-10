@@ -1,0 +1,21 @@
+.product-card {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .product-card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  .product-card h2 {
+    color: #f7a35c; /* orange */
+    margin-bottom: 10px;
+  }
+  
+  .product-card p {
+    color: #3a3e3f; /* grey */
+  }

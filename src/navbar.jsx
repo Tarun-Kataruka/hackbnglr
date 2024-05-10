@@ -1,19 +1,43 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './index.css'
+import './navbar.css'
 
 const Navbar = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    console.log(searchTerm); // handle search query here
+  };
+
   return (
 
     <nav className='navbar'>
+      <div className="navbar-brand">
+        <img src="fin.jpg" alt="Product Logo" />
+      </div>
+
         <h1 className='app-name'>
-            WEB APP NAME
+            Product Hunt 
         </h1>
-        <ul className='nav-list'>
-            <li className='tabs'><a href="/">Home</a></li>
-            <li className='tabs' ><a href="/about">About Us</a></li>
-            <li className='tabs' ><a href="/contact">Contact Us</a></li>
-            <li className='tabs' ><a href="/signUp">Sign In</a></li>
-        </ul>
+        <form className="search-form">
+        <input
+          type="search"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          placeholder="Search"
+        />
+        <button type="submit" onClick={handleSearch}>
+          Search
+        </button>
+      </form>
+        
+        <div className='nav-list'>
+            <div className='tabs'><a href="/">Home</a></div>
+            <div className='tabs' ><a href="/about">About Us</a></div>
+            <div className='tabs' ><a href="/contact">Contact Us</a></div>
+            <div className='tabs' ><a href="/signUp">Sign In</a></div>
+        </div>
         <div className='social-media'>
             <a
               href="https://www.instagram.com/hemamalini_srinivas/"
@@ -34,6 +58,8 @@ const Navbar = () => {
               />
             </a>
           </div>   
+         
+    
     </nav>
     
   )
